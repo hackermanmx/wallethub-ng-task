@@ -1,0 +1,18 @@
+<section class="d-flex justify-content-center">
+  <div *ngIf="isLogged; else loginTemplate">
+    <div class="welcome-wrapper">
+      <h2>Welcome, you're now logged in.</h2>
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-link" (click)="logout()">Log out</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loginTemplate>
+    <div>
+      <h2>This is a simple home page.</h2>
+      <button class="btn btn-block btn-primary" (click)="login()">Log In</button>
+    </div>
+  </ng-template>
+
+</section>

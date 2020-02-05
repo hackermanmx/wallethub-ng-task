@@ -1,0 +1,14 @@
+<div class="mt-4">
+  <h3>Form Change Log</h3>
+  <ul class="list-unstyled">
+    <li class="list-group-item" *ngFor="let log of formChangeLog | slice:0:15" [innerHTML]="log"></li>
+  </ul>
+</div>
+
+<div class="mt-3">
+  <h3>Message Change Log</h3>
+  <ul class="list-unstyled">
+    <li class="list-group-item" *ngFor="let log of msgChangeLog | slice:0:15" [innerHTML]="log"></li>
+  </ul>
+</div>
+

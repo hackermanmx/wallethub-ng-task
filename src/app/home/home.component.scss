@@ -1,0 +1,14 @@
+.welcome-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+button {
+  transition: .2s ease-in all;
+  &:active,
+  &:hover {
+
+  }
+}

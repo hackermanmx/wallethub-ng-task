@@ -1,0 +1,49 @@
+<section class="fadeIn d-flex justify-content-center">
+  <div>
+    <h2 class="mb-5">This is a random page</h2>
+
+    <div class="my-3">
+      <div (click)="$event.preventDefault()">
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-dark" type="button" (click)="pushItem()">Push</button>
+          <button class="btn btn-secondary mx-1" type="button" (click)="removeItemLast()">Remove Last</button><br/>
+          <button class="btn btn-info" type="button" (click)="unshiftItem()">Unshift</button>
+          <button class="btn btn-success ml-1" type="button" (click)="removeItemFirst()">Remove First</button><br/>
+        </div>
+
+        <!--and one that uses just css classes with animations for things like fading in an element.-->
+        <ul class="mt-2 list-unstyled">
+          <li class="list-group-item my-animation" *ngFor="let item of items">
+            {{item.title}}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="mt-4">Demonstrates @Input and @Output:</p>
+    <div class="input-group d-flex align-items-center">
+      <label for="value1" class="mr-2 mb-0">Enter value1:</label>
+      <input id="value1" [(ngModel)]="value1" class="form-control w-25">
+    </div>
+
+    <div class="input-group d-flex align-items-center">
+      <label for="value2" class="mr-2 mb-0">Enter value2:</label>
+      <input id="value2" [(ngModel)]="value2" class="form-control w-25">
+    </div>
+
+    <div class="d-flex justify-content-end mt-2">
+      <app-math-box
+        [value1]="value1"
+        [value2]="value2"
+        (sendOperation)="updateBoxResult($event)">
+      </app-math-box>
+    </div>
+
+    <div class="mt-5">
+      <div *ngFor="let item of result;" class="mt-1 card">
+        {{item.operation}} = {{item.result}}
+      </div>
+    </div>
+
+  </div>
+</section>
